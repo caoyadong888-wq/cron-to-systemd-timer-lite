@@ -1,0 +1,15 @@
+# Source: @daily /home/deploy/bin/backup.sh
+# Converted by cron_to_timer.py. Read ROUNDTRIP.md before you enable the timer.
+# Nickname @daily normalizes to schedule '0 0 * * *'. A text round-trip returns the five fields, not the nickname.
+# User (/home path).
+# WorkingDirectory (directory of the executable).
+
+[Unit]
+Description=daily-backup (converted crontab)
+
+[Service]
+Type=oneshot
+User=deploy
+WorkingDirectory=/home/deploy/bin
+ExecStart=/home/deploy/bin/backup.sh
+

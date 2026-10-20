@@ -1,0 +1,15 @@
+# Source: @reboot /home/deploy/apps/billing/warmup.sh
+# Converted by cron_to_timer.py. Read ROUNDTRIP.md before you enable the timer.
+# @reboot has no OnCalendar. The paired timer uses OnBootSec=1min.
+# User (/home path).
+# WorkingDirectory (directory of the executable).
+
+[Unit]
+Description=boot-warmup (converted crontab)
+
+[Service]
+Type=oneshot
+User=deploy
+WorkingDirectory=/home/deploy/apps/billing
+ExecStart=/home/deploy/apps/billing/warmup.sh
+

@@ -1,0 +1,14 @@
+# Timer for boot-warmup. Enable this unit, not the .service.
+# Source: @reboot /home/deploy/apps/billing/warmup.sh
+
+[Unit]
+Description=Timer for boot-warmup
+
+[Timer]
+OnBootSec=1min
+# @reboot has no OnCalendar. OnBootSec runs the service once after boot.
+AccuracySec=1s
+Unit=boot-warmup.service
+
+[Install]
+WantedBy=timers.target
